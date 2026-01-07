@@ -451,11 +451,7 @@
         .phone-mockup {
             position: relative;
             width: 300px;
-            padding: 12px;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 32px;
-            box-shadow: var(--glow), 0 25px 50px rgba(0, 0, 0, 0.25);
+            box-shadow: none;
             transition: all 0.3s;
         }
 
@@ -463,7 +459,7 @@
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 20px;
+            border-radius: 0;
         }
 
         .phone-glow {
@@ -555,6 +551,72 @@
         .feature-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
+            line-height: 1.6;
+            transition: color 0.3s;
+        }
+
+        /* Devices Section */
+        .devices {
+            position: relative;
+            z-index: 1;
+            padding: 6rem 2rem;
+        }
+
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .device-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .device-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-4px);
+            box-shadow: var(--glow);
+        }
+
+        .device-visual {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .device-visual img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 14px;
+            display: block;
+        }
+
+        .device-visual img.mac-shot {
+            max-width: 380px;
+        }
+
+        .device-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .device-card p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
             line-height: 1.6;
             transition: color 0.3s;
         }
@@ -836,7 +898,7 @@
                 padding: 6rem 1.5rem 3rem;
             }
 
-            .features, .pro-section, .security, .cta {
+            .features, .devices, .pro-section, .security, .cta {
                 padding: 4rem 1.5rem;
             }
 
@@ -865,6 +927,7 @@
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
+                <a href="#devices">Devices</a>
                 <a href="#security">Security</a>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                     <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -914,7 +977,7 @@
             <div class="hero-visual">
                 <div class="phone-glow"></div>
                 <div class="phone-mockup">
-                    <img src="images/keyvault-ios-screenshot-1.png" alt="KeyVault 2FA Authenticator">
+                    <img src="images/iphone.png" alt="KeyVault on iPhone">
                 </div>
             </div>
         </div>
@@ -989,6 +1052,32 @@
                     </div>
                     <h3>Organize & Sort</h3>
                     <p>Keep your accounts organized exactly how you want. Find codes fast when you need them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Devices Section -->
+    <section class="devices" id="devices">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Made for Apple Watch and Mac</h2>
+                <p>Carry your codes from wrist to desktop with a consistent KeyVault experience.</p>
+            </div>
+            <div class="devices-grid">
+                <div class="device-card">
+                    <div class="device-visual">
+                        <img src="images/apple-watch.png" alt="KeyVault on Apple Watch">
+                    </div>
+                    <h3>Apple Watch</h3>
+                    <p>Glance-ready codes and quick access right from your wrist.</p>
+                </div>
+                <div class="device-card">
+                    <div class="device-visual">
+                        <img class="mac-shot" src="images/mac.png" alt="KeyVault on Mac">
+                    </div>
+                    <h3>Mac</h3>
+                    <p>Keep codes visible on your desktop with fast search and keyboard-friendly workflows.</p>
                 </div>
             </div>
         </div>
